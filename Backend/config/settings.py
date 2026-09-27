@@ -1,3 +1,4 @@
+import os
 """
 Django settings for config project.
 
@@ -20,12 +21,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dm$18p6h7q9867g1h@j!-1^5wo2d%i3h2q#71e!(ze$3%i0bs2'
+SECRET_KEY = os.getenv(
+    "DJANGO_SECRET_KEY", 
+    "django-insecure-local-development-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    ".vercel.app",
+]
 
 
 # Application definition
@@ -134,4 +141,5 @@ MAILERS = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://prabhul-porfolio-lscx.vercel.app",
 ]

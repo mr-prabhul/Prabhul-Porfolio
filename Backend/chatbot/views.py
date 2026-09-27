@@ -1,3 +1,4 @@
+from pypdf import PdfReader
 import json
 import os
 from pathlib import Path
