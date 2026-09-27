@@ -1,6 +1,7 @@
-Django==6.0.5
+﻿Django==6.0.5
 djangorestframework
 django-cors-headers
 google-genai
 python-dotenv
 requests
+pypdf
