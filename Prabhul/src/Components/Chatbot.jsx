@@ -45,7 +45,7 @@ const Chatbot = () => {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/chat/",
+         "https://prabhul-porfolio-lscx.vercel.app/api/chat/",
         {
           method: "POST",
 
